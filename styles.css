@@ -246,7 +246,6 @@ input[type=radio]:hover + label {
   .card {
     flex-direction: row;
     gap: 2rem;
-    width: 100%;
     max-width: 57.5rem;
     margin-top: 5rem;
     padding: 2rem;
