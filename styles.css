@@ -32,6 +32,12 @@ body {
   background-color: var(--clr-neutral-300);
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -99,13 +105,14 @@ input[type=radio]:hover + label {
 
 .logo {
   display: block;
-  margin: 3rem auto 0;
+  margin-top: 3rem;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
   margin-top: 2.5rem;
   padding: 1.5rem;
   background-color: var(--clr-neutral-100);
@@ -143,7 +150,7 @@ input[type=radio]:hover + label {
 
 .tip {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   border: none;
 }
@@ -153,7 +160,7 @@ input[type=radio]:hover + label {
 }
 
 .tip-label {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.875rem;
   background-color: var(--clr-neutral-800);
   border-radius: 0.3rem;
   font-size: 1.5rem;
@@ -203,7 +210,7 @@ input[type=radio]:hover + label {
 
 .output {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   align-items: center;
   gap: 1.5rem;
 }
@@ -231,18 +238,15 @@ input[type=radio]:hover + label {
 }
 
 @media only screen and (min-width: 50em) {
-  body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  main {
+    justify-content: center;
+    min-height: 100vh;
   }
-  
-  /* need to either vertically center main */
-  /* or add top margin to logo */
   
   .card {
     flex-direction: row;
     gap: 2rem;
+    width: 100%;
     max-width: 57.5rem;
     margin-top: 5rem;
     padding: 2rem;
@@ -250,20 +254,19 @@ input[type=radio]:hover + label {
     box-shadow: 0 2rem 2rem var(--clr-shadow);
   }
   
-  .form, 
-  .output-section {
-    flex: 1;
-  }
-  
   .form {
+    flex: 1.125;
     gap: 2.5rem;
     padding: 1rem;
   }
   
+  .output-section {
+    flex: 1;
+  }
+  
   .tip {
-    /* need to make cells equal width */
-    grid-template-columns: 1fr 1fr 1fr;
-    /* grid-template-columns: repeat(3, mimmax(0, 1fr)); */
+    gap: 1rem 0.875rem;
+    grid-template-columns: repeat(3, 1fr);
   }
   
   .output-section {
