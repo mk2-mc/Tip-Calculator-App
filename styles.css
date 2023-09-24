@@ -32,19 +32,6 @@ body {
   background-color: var(--clr-neutral-300);
 }
 
-h2, legend {
-  display: inline-block;
-  font-size: 1rem;
-}
-
-legend {
-  margin-bottom: 0.5rem;
-}
-
-fieldset {
-  border: none;
-}
-
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -129,6 +116,12 @@ input[type=radio]:hover + label {
   padding: 0.5rem;
 }
 
+.bill label, 
+.people label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
 .bill-input {
   --icon: url("images/icon-dollar.svg");
 }
@@ -137,7 +130,8 @@ input[type=radio]:hover + label {
   --icon: url("images/icon-person.svg");  
 }
 
-.bill-input, .people-input {
+.bill-input, 
+.people-input {
   background-image: var(--icon);
   background-repeat: no-repeat;
   background-position: left 1rem center;
@@ -170,7 +164,7 @@ input[type=radio]:hover + label {
   color: var(--clr-neutral-600);
 }
 
-.people-title {
+.people-label {
   display: flex;
 }
 
@@ -185,6 +179,7 @@ input[type=radio]:hover + label {
 }
 
 .output-section h2 {
+  font-size: 1rem;
   color: var(--clr-neutral-100);
 }
 
@@ -200,7 +195,8 @@ input[type=radio]:hover + label {
   align-items: center;
 }
 
-.tip-output, .total-output {
+.tip-output, 
+.total-output {
   margin-left: auto;
   font-size: 2rem;
   color: var(--clr-primary-500);
@@ -240,7 +236,8 @@ input[type=radio]:hover + label {
     box-shadow: 0 2rem 2rem var(--clr-shadow);
   }
   
-  .form, .output-section {
+  .form, 
+  .output-section {
     flex: 1;
   }
   
@@ -262,7 +259,8 @@ input[type=radio]:hover + label {
     margin-top: auto;
   }
   
-  .tip-output, .total-output {
+  .tip-output, 
+  .total-output {
     font-size: 3rem;
   }
 }

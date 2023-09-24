@@ -1,13 +1,13 @@
+const form = document.querySelector(".form");
 const billInput = document.querySelector(".bill-input");
+const peopleInput = document.querySelector(".people-input");
+const errorText = document.querySelector(".error-text");
 
-const tipForm = document.querySelector(".tip-form");
+const tip = document.querySelector(".tip");
 const tipButton = document.querySelectorAll(".tip-button");
 const customButton = document.querySelector(".tip-custom-button");
 const customLabel = document.querySelector(".tip-custom-label");
 const customInput = document.querySelector(".tip-custom-input");
-
-const peopleInput = document.querySelector(".people-input");
-const errorText = document.querySelector(".error-text");
 
 const tipOutput = document.querySelector(".tip-output");
 const totalOutput = document.querySelector(".total-output");
@@ -16,14 +16,6 @@ const resetButton = document.querySelector(".reset-button");
 let billVal = 0;
 let tipVal = 0;
 let peopleVal = 0;
-
-
-// need to ignore non number input - results in "NaN" output
-// except for decimals
-
-// convert , to .
-
-
 
 // Get bill value
 billInput.addEventListener("input", () => {
@@ -34,8 +26,8 @@ billInput.addEventListener("input", () => {
 });
 
 // Get tip value
-tipForm.addEventListener("input", () => {
-  const val = tipForm["tip-percent"].value;
+tip.addEventListener("input", () => {
+  const val = form["tip-percent"].value;
   
   if (val != "Custom") {
     tipVal = parseFloat(val);
@@ -80,19 +72,15 @@ resetButton.addEventListener("click", () => {
     tipVal = 0;
     peopleVal = 0; 
     
-    tipForm.reset();
-    billInput.value = "";
-    peopleInput.value = "";
-    customInput.value = "";
-    
-    tipOutput.innerHTML = "$" + "0.00";
-    totalOutput.innerHTML = "$" + "0.00";
+    form.reset();
+    tipOutput.innerHTML = "$0.00";
+    totalOutput.innerHTML = "$0.00";
     
     customLabel.classList.remove("hidden");
     customInput.classList.add("hidden");  
-    resetButton.classList.remove("active");
     peopleInput.classList.remove("input-error");
     errorText.classList.add("hidden");    
+    resetButton.classList.remove("active");
   }
 });
 

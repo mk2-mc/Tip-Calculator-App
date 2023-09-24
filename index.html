@@ -14,11 +14,10 @@
     <img class="logo" src="images/logo.svg" alt="">
     <div class="card">
       <form class="form" autocomplete="off">
-        <fieldset class="bill">
-          <legend>Bill</legend>
-          <input class="bill-input" id="bill" type="number" placeholder="0">
-          <label class="visually-hidden" for="bill">Bill</label>
-        </fieldset>
+        <div class="bill">
+          <label for="bill-input">Bill</label>
+          <input class="bill-input" id="bill-input" type="number" placeholder="0">
+        </div>
         <fieldset class="tip">
           <legend>Select Tip %</legend>
           <input class="tip-button visually-hidden" id="tip-5" type="radio" name="tip-percent" value="5">
@@ -35,14 +34,13 @@
           <label class="tip-label tip-custom-label" for="tip-custom">Custom</label>    
           <input class="tip-custom-input hidden" type="number" value="" placeholder="0%">  
         </fieldset>
-        <fieldset class="people">
-          <div class="people-title">
-            <legend>Number of People</legend>
+        <div class="people">
+          <div class="people-label">
+            <label for="people-input">Number of People</label>
             <p class="error-text hidden">Can't be zero</p>
           </div>
-          <input class="people-input" id="people" type="number" placeholder="0">
-          <label class="visually-hidden" for="people">Number of People</label>
-        </fieldset>
+          <input class="people-input" id="people-input" type="number" placeholder="0">
+        </div>
       </form>
       <div class="output-section">
         <div class="output">
