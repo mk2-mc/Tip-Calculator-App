@@ -46,14 +46,14 @@ body {
   display: none !important;
 }
 
-.input-error:focus {
-  outline-color: var(--clr-secondary-400) !important; 
+.error-text {
+  grid-area: cell-2;
+  text-align: right;
+  color: var(--clr-secondary-400);
 }
 
-.error-text {
-  display: inline-block;
-  margin-left: auto;
-  color: var(--clr-secondary-400);
+.input-error:focus {
+  outline-color: var(--clr-secondary-400) !important; 
 }
 
 ::placeholder {
@@ -103,6 +103,9 @@ input[type=radio]:hover + label {
 }
 
 .card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
   margin-top: 2.5rem;
   padding: 1.5rem;
   background-color: var(--clr-neutral-100);
@@ -127,7 +130,8 @@ input[type=radio]:hover + label {
 }
 
 .people-input {
-  --icon: url("images/icon-person.svg");  
+  --icon: url("images/icon-person.svg"); 
+  grid-area: cell-3;  
 }
 
 .bill-input, 
@@ -164,15 +168,22 @@ input[type=radio]:hover + label {
   color: var(--clr-neutral-600);
 }
 
-.people-label {
-  display: flex;
+.people {
+  display: grid;
+  grid-template-areas: 
+  "cell-1 cell-2"
+  "cell-3 cell-3";
+  gap: 0 0.5rem;
+}
+
+.people label {
+  grid-area: cell-1;
 }
 
 .output-section {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 1.5rem;
+  gap: 2rem;
   padding: 2.5rem 1.5rem 1.5rem;
   background-color: var(--clr-neutral-800);
   border-radius: 1rem;
@@ -191,20 +202,22 @@ input[type=radio]:hover + label {
 }
 
 .output {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
+  gap: 1.5rem;
 }
 
 .tip-output, 
 .total-output {
-  margin-left: auto;
   font-size: 2rem;
+  text-align: right;
   color: var(--clr-primary-500);
 }
 
 .reset-button {
   width: 100%;
-  margin-top: 0.5rem;
+  margin-top: auto;
   padding: 0.6rem;
   background-color: var(--clr-primary-500-alpha);
   border-radius: 0.3rem;
@@ -224,11 +237,12 @@ input[type=radio]:hover + label {
     align-items: center;
   }
   
-  /* need to make card full width */
+  /* need to either vertically center main */
+  /* or add top margin to logo */
   
   .card {
-    display: flex;
-    gap: 3rem;
+    flex-direction: row;
+    gap: 2rem;
     max-width: 57.5rem;
     margin-top: 5rem;
     padding: 2rem;
@@ -243,20 +257,17 @@ input[type=radio]:hover + label {
   
   .form {
     gap: 2.5rem;
+    padding: 1rem;
   }
   
   .tip {
     /* need to make cells equal width */
     grid-template-columns: 1fr 1fr 1fr;
+    /* grid-template-columns: repeat(3, mimmax(0, 1fr)); */
   }
   
   .output-section {
-    margin-top: 0;
     padding: 2.5rem;
-  }
-  
-  .reset-button {
-    margin-top: auto;
   }
   
   .tip-output, 

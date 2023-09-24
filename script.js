@@ -41,14 +41,12 @@ tip.addEventListener("input", () => {
   } else {
     
     // Enable custom input
-    if (customInput.value >= 0) {
-      tipVal = parseFloat(customInput.value);
-      
-      if (isNaN(tipVal)) {
-        tipVal = 0;
-      }
-    }
+    tipVal = parseFloat(customInput.value);
     
+    if (isNaN(tipVal)) {
+      tipVal = 0;
+    }
+
     customLabel.classList.add("hidden");
     customInput.classList.remove("hidden");
     customInput.focus();
@@ -65,6 +63,7 @@ peopleInput.addEventListener("input", () => {
     // Show error
     peopleInput.classList.add("input-error");
     errorText.classList.remove("hidden");
+    errorText.innerHTML = "Can't be zero";
   } else {
     // Remove error
     peopleInput.classList.remove("input-error");
