@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <title>Tip calculator app</title>
+</head>
+<body>
+  <main>
+    <img class="logo" src="images/logo.svg" alt="">
+    <div class="card">
+      <form class="form" autocomplete="off">
+        <fieldset class="bill">
+          <legend>Bill</legend>
+          <input class="bill-input" id="bill" type="number" placeholder="0">
+          <label class="visually-hidden" for="bill">Bill</label>
+        </fieldset>
+        <fieldset class="tip">
+          <legend>Select Tip %</legend>
+          <input class="tip-button visually-hidden" id="tip-5" type="radio" name="tip-percent" value="5">
+          <label class="tip-label" for="tip-5">5%</label>
+          <input class="tip-button visually-hidden" id="tip-10" type="radio" name="tip-percent" value="10">
+          <label class="tip-label" for="tip-10">10%</label>
+          <input class="tip-button visually-hidden" id="tip-15" type="radio" name="tip-percent" value="15">
+          <label class="tip-label" for="tip-15">15%</label>
+          <input class="tip-button visually-hidden" id="tip-25" type="radio" name="tip-percent" value="25">
+          <label class="tip-label" for="tip-25">25%</label>
+          <input class="tip-button visually-hidden" id="tip-50" type="radio" name="tip-percent" value="50">
+          <label class="tip-label" for="tip-50">50%</label>
+          <input class="tip-custom-button visually-hidden" id="tip-custom" type="radio" name="tip-percent" value="Custom">
+          <label class="tip-label tip-custom-label" for="tip-custom">Custom</label>    
+          <input class="tip-custom-input hidden" type="number" value="" placeholder="0%">  
+        </fieldset>
+        <fieldset class="people">
+          <div class="people-title">
+            <legend>Number of People</legend>
+            <p class="error-text hidden">Can't be zero</p>
+          </div>
+          <input class="people-input" id="people" type="number" placeholder="0">
+          <label class="visually-hidden" for="people">Number of People</label>
+        </fieldset>
+      </form>
+      <div class="output-section">
+        <div class="output">
+          <h2>Tip Amount</h2>
+          <p class="tip-output">$0.00</p>
+        </div>
+        <div class="output">
+          <h2>Total</h2>
+          <p class="total-output">$0.00</p>
+        </div>
+        <button class="reset-button">Reset</button>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
