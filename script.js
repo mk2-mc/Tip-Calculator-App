@@ -19,10 +19,13 @@ let peopleVal = 0;
 
 // Get bill value
 billInput.addEventListener("input", () => {
-  if (billInput.value >= 0) {
-    billVal = parseFloat(billInput.value);
-    calculate();    
+  billVal = parseFloat(billInput.value);
+  
+  if (isNaN(billVal)) {
+    billVal = 0;
   }
+  
+  calculate();    
 });
 
 // Get tip value
@@ -31,13 +34,19 @@ tip.addEventListener("input", () => {
   
   if (val != "Custom") {
     tipVal = parseFloat(val);
-
+    
+    // Disable custom input
     customLabel.classList.remove("hidden");
     customInput.classList.add("hidden");
   } else {
-
+    
+    // Enable custom input
     if (customInput.value >= 0) {
       tipVal = parseFloat(customInput.value);
+      
+      if (isNaN(tipVal)) {
+        tipVal = 0;
+      }
     }
     
     customLabel.classList.add("hidden");
@@ -50,16 +59,16 @@ tip.addEventListener("input", () => {
 
 // Get people value
 peopleInput.addEventListener("input", () => {
-  if (peopleInput.value >= 1) {
-     peopleVal = Math.floor(parseFloat(peopleInput.value));
-     
-    // Remove error
-    peopleInput.classList.remove("input-error");
-    errorText.classList.add("hidden");
-  } else {
+  peopleVal = Math.floor(parseFloat(peopleInput.value));
+  
+  if ((isNaN(peopleVal)) || (peopleVal < 1)) {   
     // Show error
     peopleInput.classList.add("input-error");
     errorText.classList.remove("hidden");
+  } else {
+    // Remove error
+    peopleInput.classList.remove("input-error");
+    errorText.classList.add("hidden");    
   }
   
   calculate();
