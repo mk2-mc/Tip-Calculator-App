@@ -36,6 +36,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 3rem;
 }
 
 .visually-hidden {
@@ -101,11 +102,6 @@ input[type=radio]:focus-visible + label,
 input[type=radio]:hover + label {
   background-color: var(--clr-primary-300) !important;
   color: var(--clr-neutral-800) !important;
-}
-
-.logo {
-  display: block;
-  margin-top: 3rem;
 }
 
 .card {
@@ -241,6 +237,7 @@ input[type=radio]:hover + label {
   main {
     justify-content: center;
     min-height: 100vh;
+    padding: 3rem 0;
   }
   
   .card {
