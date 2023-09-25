@@ -256,16 +256,13 @@ input[type=radio]:hover + label {
     padding: 1rem;
   }
   
-  .output-section {
-    flex: 1;
-  }
-  
   .tip {
     gap: 1rem 0.875rem;
     grid-template-columns: repeat(3, 1fr);
   }
   
   .output-section {
+    flex: 1;
     padding: 2.5rem;
   }
   
