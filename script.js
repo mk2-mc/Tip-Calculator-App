@@ -61,12 +61,12 @@ peopleInput.addEventListener("input", () => {
   
   if ((isNaN(peopleVal)) || (peopleVal < 1)) {   
     // Show error
-    peopleInput.classList.add("input-error");
+    peopleInput.classList.add("error-input");
     errorText.classList.remove("hidden");
     errorText.innerHTML = "Can't be zero";
   } else {
     // Remove error
-    peopleInput.classList.remove("input-error");
+    peopleInput.classList.remove("error-input");
     errorText.classList.add("hidden");    
   }
   
@@ -86,7 +86,7 @@ resetButton.addEventListener("click", () => {
     
     customLabel.classList.remove("hidden");
     customInput.classList.add("hidden");  
-    peopleInput.classList.remove("input-error");
+    peopleInput.classList.remove("error-input");
     errorText.classList.add("hidden");    
     resetButton.classList.remove("active");
   }

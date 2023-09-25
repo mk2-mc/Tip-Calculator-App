@@ -59,7 +59,7 @@ main {
   color: var(--clr-secondary-400);
 }
 
-.input-error:focus {
+.error-input:focus {
   outline-color: var(--clr-secondary-400) !important; 
 }
 
