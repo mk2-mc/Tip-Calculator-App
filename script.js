@@ -4,8 +4,6 @@ const peopleInput = document.querySelector(".people-input");
 const errorText = document.querySelector(".error-text");
 
 const tip = document.querySelector(".tip");
-const tipButton = document.querySelectorAll(".tip-button");
-const customButton = document.querySelector(".tip-custom-button");
 const customLabel = document.querySelector(".tip-custom-label");
 const customInput = document.querySelector(".tip-custom-input");
 
