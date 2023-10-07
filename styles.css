@@ -230,7 +230,6 @@ input[type=radio]:hover + label {
   color: var(--clr-neutral-800-alpha);
   cursor: pointer;
   border: none;
-  outline: none;
 }
 
 @media only screen and (min-width: 50em) {
